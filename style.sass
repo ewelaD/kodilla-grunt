@@ -1,0 +1,171 @@
+@import url(https://fonts.googleapis.com/css?family=Caveat:400,700)
+$fonts: "Caveat", cursive
+$main-color: #FFFFFF
+$backg-blue: #2A69A5
+$back-darkblue: #2191FE
+=clearfix()
+	&:before,
+	&:after
+		content: ""
+		display: table
+		clear: both
+* 
+	box-sizing: border-box
+body
+	margin: 0
+	font: 100% $fonts
+	font-size: 30px
+.container
+	width: 100%
+	max-width: 1200px
+	margin: 50px auto
+.message
+	border: 2px solid red
+/*header&logo&links */
+header
+	@extend .message
+	background-color: $backg-blue
+	.container
+		margin-top: 0
+		margin-bottom: 0
+	img
+		padding-top: 30px
+		padding-bottom: 30px
+	ul
+		list-style-type: none
+		float: right
+		margin: 0
+		padding: 0
+	nav
+		+clearfix()
+		ul
+			li
+				display: inline-block
+				padding-top: 10px
+				padding-bottom: 10px
+				a
+					display: block
+					text-decoration: none
+					color: $main-color
+					padding: 20px
+					font-weight: 700
+				&:hover
+					background-color: $back-darkblue	
+/* jumbotron*/
+.jumbotron
+	height: 100vh
+	width: 100%
+	background-image: url("https://images.unsplash.com/photo-1485340140625-c6edf4b069d6?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&s=b58f4fd241c3cb3b44bf74a64a4246e4/300/200")
+	background-size: cover
+	background-position: center
+	@extend .message
+	.slogan
+		float: right
+		max-width: 800px
+		background-color: rgba(0, 0, 0, 0.5)
+		padding: 40px
+		margin-top: 20%
+	h1 
+		color: $main-color
+		font-size: 3.4rem
+		max-width: 400px
+.gallery
+	.container
+		+clearfix()
+		.photo
+			width: 30%
+			margin-right: 5%
+			float: left
+			img 
+				width: 100%
+			&:last-of-type
+				margin-right: 0
+/* section map */
+.map 
+	+clearfix()
+	img 
+		max-width: 100%
+		height: auto
+/* section footer */
+.footer
+	background-color: $backg-blue
+	@extend .message
+	h2,
+	h3
+		color: $main-color
+		text-align: center
+	.social_icon
+		text-align: center
+		i.fa
+			width: 50px
+			height: 50px
+			text-align: center
+			color: $main-color
+			background-color: $back-darkblue
+			padding: 10px 0
+			border-radius: 10%
+		&:hover 
+			color: $backg-blue
+			background-color: $main-color
+.year
+	text-align: center
+	@extend .message
+@media(min-width: 768px) and (max-width: 1199px) 
+	/* header and jumbotron */
+	header
+		nav
+			ul
+				li
+					a 
+						font-size: 1.2rem
+	.jumbotron 
+		.slogan 
+			font-size: 1.2rem
+			max-width: 1199px
+			margin-bottom: 10%
+			padding: 0
+			h1 
+				color: $main-color
+				font-size: 2.4rem
+	/* gallery */
+	.gallery 
+		margin-left: 5%
+		margin-right: 5%
+@media(max-width: 767px) 
+	/*header and jumbotron */
+	header 
+		text-align: center
+		nav
+			ul 
+				float: none
+				li 
+					display: block
+					text-align: center
+					a 
+						font-size: 0.8rem
+	.jumbotron 
+		.slogan 
+			float: right
+			max-width: 767px
+			background-color: rgba(0, 0, 0, 0.5)
+			padding: 5%
+			margin-top: 20%
+			h1 
+				color: $main-color
+				font-size: 1.4rem
+	/*gallery */
+	.gallery
+		.container
+			+clearfix()
+			padding: 10px
+			.photo
+				width: 100%	
+				float: none
+	/* footer */
+	.footer 
+		h2,
+		h3
+			font-size: 1.2rem
+
+
+
