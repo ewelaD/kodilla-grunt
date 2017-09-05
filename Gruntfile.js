@@ -18,7 +18,7 @@ module.exports = function(grunt) {
         files: [{
             expand: true,
             cwd: 'images/',
-            src: ['**/*.{png,jpg,gif}'],
+            src: ['*.{png,jpg,gif}'],
             dest: 'images/build/'
         }]
     }
@@ -39,6 +39,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-watch');
   // Default task(s).
-  grunt.registerTask('default', ['sass', 'imagemin']);
-  grunt.registerTask('direct', ['watch']);
+  grunt.registerTask('default', ['sass', 'imagemin', 'watch']);
 };
